@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Check My Plant</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <style>
+        .hero {
+            height: 100%;
+        }
+        #pred_img {
+            height: 500px;
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <body >
+        <div id="header">
+            <section class="content">
+                <div class="container">
+                    <h1 class="title" style="font-size:2.5rem">
+                        <a href="/"><img id="title" src="/static/logo-image.jpg" alt="logo"></a>
+                    </h1>
+                </div>
+            </section>
+        </div>
+            
+        <div class="content">
+            <div class="column is-one-third has-text-centered" style="vertical-align:middle;">
+                <img id="pred_img" src="{{ url_for('send_file', filename=imagefile)}}" />
+            </div>
+            <div class="column is-one-quarter" style="font-size:2.5rem; text-align: center;">
+
+                <h2 id="pred" style="color:black">
+                    This is a <span style="font-weight: bold; color:black;">{{ label }}</span>
+                </h2>
+
+                <h2 style="font-size: 3rem">
+                    Prediction: <span style="font-weight: bold; color:black;">{{prob}}%</span>
+                </h2>
+                <a href="/" class="button is-black is-inverted is-outlined"
+                    style="font-size:2.5rem; color:rgb(237, 16, 16);">Back</a>
+            </div>
+        </div>
+    </body>
+</html>
